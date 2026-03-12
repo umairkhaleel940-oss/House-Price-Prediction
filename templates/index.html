@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>House Price Prediction</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🏡 House Price Prediction</h1>
+      <p>Enter property details and get an instant price estimate.</p>
+    </header>
+
+    <main>
+      <form id="predict-form">
+        <div class="grid">
+          <div class="field">
+            <label for="bedrooms">Bedrooms</label>
+            <input id="bedrooms" type="number" min="0" step="1" required placeholder="e.g., 3"/>
+          </div>
+          <div class="field">
+            <label for="bathrooms">Bathrooms</label>
+            <input id="bathrooms" type="number" min="0" step="1" required placeholder="e.g., 2"/>
+          </div>
+          <div class="field">
+            <label for="area">Area (sqft)</label>
+            <input id="area" type="number" min="100" step="1" required placeholder="e.g., 1200"/>
+          </div>
+          <div class="field">
+            <label for="yearBuilt">Year Built</label>
+            <input id="yearBuilt" type="number" min="1900" step="1" required placeholder="e.g., 2010"/>
+          </div>
+          <div class="field">
+            <label for="location">Location</label>
+            <select id="location" required>
+              <option value="">Loading…</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="metro">Nearby Metro</label>
+            <select id="metro" required>
+              <option value="">Loading…</option>
+            </select>
+          </div>
+        </div>
+
+        <button id="submit-btn" type="submit">Predict Price</button>
+      </form>
+
+      <section id="result" class="result hidden">
+        <h2>Estimated Price</h2>
+        <div id="price" class="price">--</div>
+        <div id="ai-explanation" class="explanation">--</div>
+        <p class="hint">This is an AI-based estimate and may vary from real market prices.</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>Built with ❤️ Flask + ML + GenAI</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
