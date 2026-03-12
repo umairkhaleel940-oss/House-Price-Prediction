@@ -15,7 +15,7 @@ MODEL_PATH = BASE_DIR / "model.pkl"
 
 # === Hugging Face API Setup ===
 API_URL = "https://router.huggingface.co/fireworks-ai/inference/v1/chat/completions"
-HF_TOKEN = "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"  # Use env variable in production
+HF_TOKEN = os.getenv("HF_TOKEN")  
 HEADERS = {"Authorization": f"Bearer {HF_TOKEN}"}
 
 # === Flask App ===
